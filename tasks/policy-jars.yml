@@ -1,0 +1,28 @@
+---
+- block:
+  - name: download jce local_policy.jar
+    get_url:
+      url: "{{ policy_jars.local_policy.url }}"
+      dest: "{{ policy_jars.destination }}/local_policy.jar"
+    when: policy_jars.local_policy.url is defined
+  - name: copy jce local_policy.jar
+    copy:
+      remote_src: yes
+      src: "{{ policy_jars.local_policy.src }}"
+      dest: "{{ policy_jars.destination }}/local_policy.jar"
+    when: policy_jars.local_policy.src is defined
+  when: policy_jars.local_policy is defined
+
+- block:
+  - name: download jce US_export_policy.jar
+    get_url:
+      url: "{{ policy_jars.US_export_policy.url }}"
+      dest: "{{ policy_jars.destination }}/US_export_policy.jar"
+    when: policy_jars.US_export_policy.url is defined
+  - name: copy jce US_export_policy.jar
+    copy:
+      remote_src: yes
+      src: "{{ policy_jars.US_export_policy.src }}"
+      dest: "{{ policy_jars.destination }}/US_export_policy.jar"
+    when: policy_jars.US_export_policy.src is defined
+  when: policy_jars.US_export_policy is defined

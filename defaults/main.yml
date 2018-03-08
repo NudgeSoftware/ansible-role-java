@@ -6,7 +6,5 @@
 java_home: ""
 # policy_jars: 
 #   destination: /usr/java/jre_1.8/lib/security/
-#   local_policy:
-#     src: /usr/local/src/local_policy.jar
-#   US_export_policy:
-#     url: https://download.oracle.com/jdk-8u152-policy/US_export_policy.jar
+#   local_policy: https://download.oracle.com/jdk-8u152-policy/local_policy.jar
+#   US_export_policy: https://download.oracle.com/jdk-8u152-policy/US_export_policy.jar

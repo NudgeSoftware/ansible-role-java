@@ -29,10 +29,6 @@
   when: ansible_os_family == 'FreeBSD'
   static: no
 
-- include: policy-jars.yml
-  when: policy_jars is defined and policy_jars.destination is defined
-  static: no
-
 # Environment setup.
 - name: Set JAVA_HOME if configured.
   template:
